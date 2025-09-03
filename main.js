@@ -3,10 +3,10 @@ import { TextInterface } from "text-interface";
 
 let app = document.querySelector("#app");
 // Create a new "Text Interface"
-let ti = new TextInterface(app, "Example Text Interface");
+let ti = new TextInterface(app, "Example Text Interface Program");
 
-ti.output("What is your name?");
-let name = await ti.readText();
-await ti.output("Hello, " + name);
+ti.output("Welcome to my program!");
+let name = await ti.prompt("What is your name?");
+ti.output("Hello, " + name);
 
 
