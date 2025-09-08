@@ -35,3 +35,4 @@ while (repeatAndAnnoyUser) {
   ti.output ("Your message must include the word DOS");
 }
 } 
+// idk what the hell i did but not it dont work
