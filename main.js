@@ -16,24 +16,22 @@ while (repeatAndAnnoyUser) {
   let help = await ti.prompt("How can I help?");
   if (help==="DOS" || help==="dos" || help==="Dos") {
     ti.output("Go use something modern like Windows NT or Linux, or god forbid MacOS");
-    ti.output("get outta here!");
     ti.output("(It is now safe to turn off your computer)")
     repeatAndAnnoyUser = false;
-  } else {
-    ti.output("Your message must include the word DOS");   
+  if (help==="swear") {
+      repeatAndAnnoyUser = false;
+      answerRude = true;
+      if (answerRude) {
+        let rude = await ti.prompt("Rude. Apologize.");
+        if (rude.toLowerCase()==="sorry") {
+          answerRude = false;
+          ti.output ("Apology accepted.");
+          } else {
+          ti.output("I refuse to help you.");
+        }
+      }
     }
-    }
-if (help.toLowerCase().includes("fuck")) {
-  let repeatAndAnnoyUser = false;
-  answerRude = true;
-  if (answerRude) {
-  ti.output("Rude! I'm just trying to help!");
-  ti.output("I expect an apology from you right this instant!");
-  let apology = await ti.prompt("Do you apologize?");
-  if (apology.toLowerCase().includes("yes")) {
-    answerRude = false;
-    ti.output("Thank you for your apology.");
-    repeatAndAnnoyUser = true;
-  }
-  }
-  }
+}else {
+  ti.output ("Your message must include the word DOS");
+}
+} 
