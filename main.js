@@ -14,7 +14,7 @@ let repeatAndAnnoyUser = true;
 let exitRightAway = false;
 while (repeatAndAnnoyUser && !exitRightAway) {
   let help = await ti.prompt("How can I help?");
-  if (help === "DOS" || help === "dos" || help === "Dos") {
+  if (help.toLowerCase().includes("dos")) {
     ti.output(
       "Go use something modern like Windows NT or Linux, or god forbid MacOS"
     );
